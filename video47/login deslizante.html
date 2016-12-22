@@ -102,30 +102,30 @@ html , body{
 }
 
 </style>
-<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>﻿
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 
 $(document).ready(function(){
-		// $("#abierto").click(function(){
-		// 	$("#login form").fadeToggle(300);
-		// 	$(this).toggleClass("cerrado");
-		// });
-
+		$("#abierto").click(function(){
+			$("#login form").fadeToggle(300);
+			$(this).toggleClass("cerrado");
+		})
+});
 		// el codigo no funciona con la ultima version de jquery con la funcion toggle, habría que modificarla a la nueva version
 
-		$("#abierto").toggle(
-			function(){
-				$("#login form").slideDown(300);
-				$(this).addClass("cerrado");
-			},
+		// $("#abierto").toggle(
+		// 	function(){
+		// 		$("#login form").slideDown(300);
+		// 		$(this).addClass("cerrado");
+		// 	},
 
-			function(){
-				$("#login form").fadeOut(600);
-				$(this).removeClass("cerrado");
-		}
-		);
+		// 	function(){
+		// 		$("#login form").fadeOut(600);
+		// 		$(this).removeClass("cerrado");
+		// }
+		// );
 
-});
+// });
 
 </script>
 </head>
