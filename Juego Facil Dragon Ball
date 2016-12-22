@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html data-ng-app="app" data-ng-controller="miControlador as vm">
+<head>
+<meta charset="UTF-8" />
+<title>Pelearsus online battles</title>
+
+<!-- Librerías -->
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.js"></script>
+
+<!-- Bootstrap -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+<!-- Optional theme -->
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+
+<!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Archivos Externos -->
+<link rel="stylesheet" type="text/css" href="css/estilos.css" />
+<script type="text/javascript" src="codigo.js"></script>
+
+
+
+</head>
+<body>
+
+	<header class="jumbotron text-center">
+		<h1>Pelearsus Battles</h1>
+	</header>
+
+	<div class="panel panel-default" ng-show="vm.mostrarElegir">
+		<div class="panel-heading">
+			<h4>Escoger luchador</h4>
+		</div>
+		<div class="panel-body">
+			<button class="btn btn-lg btn-info btn-block"
+				ng-click="vm.escogerJugador()">
+				<i class="glyphicon glyphicon-random"></i>
+			</button>
+		</div>
+
+	</div>
+
+	<div class="panel panel-default" ng-show="vm.mostrarLucha">
+		<div class="panel-heading text-center">
+			<h1>{{vm.jugador1.nombre}} <span class="label label-danger">VS</span> {{vm.jugador2.nombre}}</h1>
+		</div>
+		<div class="panel-body">
+			<div id="controles" class="btn-group btn-group-justified">
+				<div class="btn-group">
+					<button ng-click="vm.p1Ataca()" class="btn btn-lg btn-primary"><i class="glyphicon glyphicon-chevron-right"></i></button>
+				</div>
+				<div class="btn-group">
+					<button ng-click="vm.p2Ataca()" class="btn btn-lg btn-primary"><i class="glyphicon glyphicon-chevron-left"></i></button>				
+				</div>			
+			</div>
+			<div id="personajes" class="row">
+				<div id="caja-p1" class="col-md-6">
+					<table class="table table-responsive">
+						<tr>
+							<td colspan="3" class="text-center">
+								<h2>{{vm.jugador1.nombre}}</h2>
+							</td>
+						</tr>
+						<tr>
+							<td rowspan="4">
+								<img class="img-thumbnail" alt="imagen {{vm.jugador1.nombre}}" src="{{vm.jugador1.imagen}}" />
+							</td>
+							<td>Vida</td>
+							<td>{{vm.jugador1.vida}}</td>
+						</tr>
+						<tr>
+							<td>Ataque</td>
+							<td>{{vm.jugador1.ataque}}</td>
+						</tr>
+						<tr>
+							<td>Defensa</td>
+							<td>{{vm.jugador1.defensa}}</td>
+						</tr>
+						<tr>
+							<td>Ki</td>
+							<td>{{vm.jugador1.ki}}</td>
+						</tr>
+					</table>
+				</div>
+				<div id="caja-p2" class="col-md-6">
+					<table class="table table-responsive">
+						<tr>
+							<td colspan="3" class="text-center">
+								<h2>{{vm.jugador2.nombre}}</h2>
+							</td>
+						</tr>
+						<tr>
+							<td rowspan="4"><img class="img-thumbnail" alt="imagen {{vm.jugador2.nombre}}"
+								src="{{vm.jugador2.imagen}}" /></td>
+							<td>Vida</td>
+							<td>{{vm.jugador2.vida}}</td>
+						</tr>
+						<tr>
+							<td>Ataque</td>
+							<td>{{vm.jugador2.ataque}}</td>
+						</tr>
+						<tr>
+							<td>Defensa</td>
+							<td>{{vm.jugador2.defensa}}</td>
+						</tr>
+						<tr>
+							<td>Ki</td>
+							<td>{{vm.jugador2.ki}}</td>
+						</tr>
+					</table>
+
+				</div>
+			
+			
+			</div> <!-- fin div personajes -->
+			
+			<div id="mensajes">
+				<textarea class="form-control" ng-model="vm.mensajes"></textarea>
+			</div>
+			
+			
+			
+		</div> <!-- Fin del panelbody -->
+
+	</div>
+
+</body>
+</html>
